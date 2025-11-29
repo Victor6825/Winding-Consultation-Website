@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Winding Consulting delivers strategic advisory, leadership coaching, and digital transformation services for ambitious businesses.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Winding Consulting delivers strategic advisory, leadership coaching, and digital transformation services for ambitious businesses."/>
   <title>Winding Consulting | Strategic Advisory</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script defer src="assets/js/script.js"></script>
+
+  <!-- Use explicit relative paths (safe for GH Pages deployed at /repo-name/) -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Minimal inline fallback styles so the page does not look completely raw if styles.css fails to load -->
+  <style>
+    /* small safe fallback to avoid totally raw rendering while debugging */
+    :root { --fg:#0b0b0b; --muted:#666; --accent:#5b7cfa; }
+    html,body{height:100%;margin:0;font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    .container{max-width:1100px;margin:0 auto;padding:20px;}
+    .site-header{background:#fff;padding:12px 0;border-bottom:1px solid #eee}
+    .logo{font-weight:700;color:var(--fg)}
+    .main-nav a{margin:0 10px;color:var(--muted);text-decoration:none;font-weight:500}
+    h1,h2,h3{color:var(--fg)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #ddd}
+    .primary{background:var(--accent);color:#fff;border:none}
+    img{max-width:100%;height:auto;display:block}
+    .hero{padding:36px 0}
+    footer{padding:24px 0;border-top:1px solid #eee;color:var(--muted);font-size:14px}
+  </style>
+
+  <!-- Script (explicit relative path) -->
+  <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <div class="logo">Winding<span>Consulting</span></div>
       <nav class="main-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="booking.html">Booking</a>
-        <a href="contact.html">Contact</a>
+        <a href="./index.html" class="active">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./services.html">Services</a>
+        <a href="./booking.html">Booking</a>
+        <a href="./contact.html">Contact</a>
         <a href="#hero" class="cta-link">Login</a>
       </nav>
       <div class="header-actions">
         <button class="nav-toggle" aria-label="Open navigation">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
@@ -44,8 +65,8 @@
             and high-performing cultures.
           </p>
           <div class="hero__cta">
-            <a class="btn primary" href="booking.html">Book a strategy call</a>
-            <a class="btn secondary" href="services.html">Explore services</a>
+            <a class="btn primary" href="./booking.html">Book a strategy call</a>
+            <a class="btn secondary" href="./services.html">Explore services</a>
           </div>
         </div>
         <div class="hero__media">
@@ -121,7 +142,7 @@
           <p class="eyebrow">What we deliver</p>
           <h2>Consulting services built for decisive impact.</h2>
         </div>
-        <a href="services.html" class="text-link">View all services →</a>
+        <a href="./services.html" class="text-link">View all services →</a>
       </div>
       <div class="container cards-grid">
         <article class="service-card">
@@ -174,7 +195,7 @@
             <li>Launched analytics-powered forecasting reducing delays by 37%.</li>
             <li>Installed leadership rituals that improved accountability in 60 days.</li>
           </ul>
-          <a class="btn tertiary" href="about.html">Dive into our approach</a>
+          <a class="btn tertiary" href="./about.html">Dive into our approach</a>
         </div>
       </div>
     </section>
@@ -232,10 +253,10 @@
       <div>
         <p class="eyebrow">Explore</p>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="booking.html">Booking</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./booking.html">Booking</a></li>
+          <li><a href="./contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -256,6 +277,12 @@
     </div>
     <p class="legal">© <span id="year"></span> Winding Consulting. All rights reserved.</p>
   </footer>
+
+  <script>
+    // small fallback script to set year even if your main script fails to load
+    try {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    } catch(e){}
+  </script>
 </body>
 </html>
-
